@@ -72,7 +72,7 @@
                                 <rect key="frame" x="0.0" y="220" width="375" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="81" id="DYf-nM-H3B">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyCell" rowHeight="81" id="DYf-nM-H3B" customClass="PartyCell" customModule="Party_Rock" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DYf-nM-H3B" id="Cdk-vm-3bK">
@@ -91,7 +91,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="55" id="QF2-tf-B8f"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="StillTime-Regular" family="Still Time" pointSize="35"/>
+                                                    <fontDescription key="fontDescription" name="StillTime-Regular" family="Still Time" pointSize="36"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -104,6 +104,10 @@
                                                 <constraint firstItem="pBc-SC-tgf" firstAttribute="leading" secondItem="Cdk-vm-3bK" secondAttribute="leadingMargin" id="gwJ-Bk-H6x"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoPreviewImage" destination="pBc-SC-tgf" id="vnI-Mf-eso"/>
+                                            <outlet property="videoTitle" destination="Aeg-19-o3i" id="BEz-zD-LdY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -123,6 +127,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="y0e-35-GCZ" id="Wn1-CG-U5K"/>
                         <segue destination="mcp-ua-pn2" kind="showDetail" identifier="toVideoVC" id="xQS-d7-j3U"/>
                     </connections>
                 </viewController>
