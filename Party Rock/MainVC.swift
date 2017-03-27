@@ -21,7 +21,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         //URL Test to see how it needs to be formatted.
         
-        let urlTest = "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/tWyuglGCKgE\" frameborder=\"0\" allowfullscreen></iframe>"
+//        let urlTest = "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/tWyuglGCKgE\" frameborder=\"0\" allowfullscreen></iframe>"
         
         // Create some test data
         
@@ -59,6 +59,21 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
 
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let partyRock = partyRocks[indexPath.row]
+        performSegue(withIdentifier: "toVideoVC", sender: partyRock)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let destination = segue.destination as? VideoVC {
+            if let partyRockToBeSent = sender as? PartyRock {
+                destination.partyRock = partyRockToBeSent
+            }
+        }
     }
 
 }

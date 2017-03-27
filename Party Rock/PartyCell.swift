@@ -23,7 +23,25 @@ class PartyCell: UITableViewCell {
     
     func updateCell(partyRock: PartyRock) {
         videoTitle.text = partyRock.videoTitle
-        //TODO: Set image from URL
+        
+        //TODO: Set image from URL.  Have to download this from the Internet and then display on the app.  We need to put the downloads on an asynchrounous thread so that it does not hold up the app!
+        
+        let url = URL(string: partyRock.imageURL)
+        
+        //Create a background thread.  The background thread can't handle updating UI, etc., so once we are finished we have to come back to the main thread to do that.
+        
+        DispatchQueue.global().async {
+            do {
+                let data = try Data(contentsOf: url!)
+                
+                //In the video, Mark uses Dispatch.global().sync, but this was giving me an error.  Further research online suggests that you should only update UI elements from the main thread, not the global.  Now, it throws no errors.
+                DispatchQueue.main.sync {
+                    self.videoPreviewImage.image = UIImage(data: data)
+                }
+            } catch {
+                // Handle the error
+            }
+        }
     }
 
 

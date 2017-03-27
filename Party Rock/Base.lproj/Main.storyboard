@@ -37,22 +37,25 @@
                                 <rect key="frame" x="0.0" y="180" width="375" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="p2V-AW-f7Q">
-                                        <rect key="frame" x="8" y="5" width="359" height="30"/>
+                                        <rect key="frame" x="8" y="4.5" width="359" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44V-Rh-BBl">
-                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <state key="normal" title="Top Videos">
                                                     <color key="titleColor" red="1" green="0.53414699834526658" blue="0.9651926157574956" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISU-3O-7zr">
-                                                <rect key="frame" x="119.5" y="0.0" width="120" height="30"/>
+                                                <rect key="frame" x="119.5" y="0.0" width="120" height="31"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <state key="normal" title="Top Songs">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ta-dw-vdJ">
-                                                <rect key="frame" x="239.5" y="0.0" width="119.5" height="30"/>
+                                                <rect key="frame" x="239.5" y="0.0" width="119.5" height="31"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <state key="normal" title="Events">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -154,18 +157,34 @@
                                     <constraint firstAttribute="height" constant="300" id="yne-Pf-LGp"/>
                                 </constraints>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5s-oy-sic">
+                                <rect key="frame" x="21" y="330" width="333" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pfw-w2-nJz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="StillTime-Regular" family="Still Time" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.8980392157" green="0.90196078430000004" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="y5s-oy-sic" firstAttribute="top" secondItem="xIS-JI-Nr6" secondAttribute="bottom" constant="30" id="4Pa-3u-16f"/>
                             <constraint firstItem="xIS-JI-Nr6" firstAttribute="leading" secondItem="XBh-zS-DFM" secondAttribute="leading" id="FP7-dE-jwY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y5s-oy-sic" secondAttribute="trailing" constant="5" id="Jyo-Dj-2my"/>
                             <constraint firstItem="xIS-JI-Nr6" firstAttribute="top" secondItem="XBh-zS-DFM" secondAttribute="top" id="STQ-zn-ifl"/>
                             <constraint firstAttribute="trailing" secondItem="xIS-JI-Nr6" secondAttribute="trailing" id="pVN-xp-pAH"/>
+                            <constraint firstItem="y5s-oy-sic" firstAttribute="leading" secondItem="XBh-zS-DFM" secondAttribute="leadingMargin" constant="5" id="x1Z-Gk-NYl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLbl" destination="y5s-oy-sic" id="cWj-eq-GBr"/>
+                        <outlet property="webView" destination="xIS-JI-Nr6" id="xkR-TX-8py"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Nq-EN-KAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="741.60000000000002" y="39.130434782608695"/>
+            <point key="canvasLocation" x="926" y="37"/>
         </scene>
     </scenes>
     <resources>
